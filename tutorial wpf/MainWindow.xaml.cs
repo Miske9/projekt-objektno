@@ -14,7 +14,7 @@ namespace tutorial_wpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : NavigationWindow
     {
         public MainWindow()
         {
@@ -99,14 +99,16 @@ namespace tutorial_wpf
             InitializeComponent();
         }
 
-        public void IgraciButton_Click(object sender, RoutedEventArgs e)
+        private void IgraciButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Uri("lista_igraca.xaml", UriKind.Relative));
+            lista_igraca igracipage = new lista_igraca();
+            this.NavigationService.Navigate(igracipage);
         }
 
-        public void UtakmiceButton_Click(object sender, RoutedEventArgs e)
+        private void UtakmiceButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Uri("Utakmice.xaml", UriKind.Relative));
+            Utakmice utakmicaPage = new Utakmice();
+            this.NavigationService.Navigate(utakmicaPage);
         }
 
         private void TransferiButton_Click(object sender, RoutedEventArgs e)
@@ -116,7 +118,7 @@ namespace tutorial_wpf
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Uri("About.xaml", UriKind.Relative));
+            
         }
     }
 }

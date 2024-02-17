@@ -11,11 +11,11 @@
     mc:Ignorable="d">
 
     <Grid>
-        <ListBox ItemsSource="{Binding Matches}">
+        <ListBox ItemsSource="{Binding Players}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding opponent}" />
+                        <TextBlock Text="{Binding Name}" />
                         <TextBlock>
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
