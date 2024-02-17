@@ -31,6 +31,7 @@ namespace tutorial_wpf
         public void TransferToClub(FootballClub newClub, decimal transferFee)
         {
             TransferHistory.Add(new Transfer(CurrentClub, newClub, transferFee));
+            CurrentClub= newClub;
         }
 
         public override string ToString()

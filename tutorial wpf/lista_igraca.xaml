@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="tutorial_wpf.lista_igraca"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:tutorial_wpf"
+    Title="Lista Igraca"
+    Width="785"
+    Height="450">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+
+            <ListBox ItemsSource="{Binding Players}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text" Value="{Binding CurrentClub.Name, FallbackValue=Nije u klubu}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding CurrentClub.Name}" Value="{x:Null}">
+                                                <Setter Property="Text" Value="Nije u klubu" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding CurrentClub.Name}" Value="">
+                                                <Setter Property="Text" Value="Nije u klubu" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Position}" />
+                            <TextBlock Text="{Binding MarketValue}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </ScrollViewer>
+</Page>

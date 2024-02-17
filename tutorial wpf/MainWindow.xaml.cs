@@ -18,6 +18,7 @@ namespace tutorial_wpf
     {
         public MainWindow()
         {
+
             FootballClub myClub = new FootballClub("Barecelona", 1000);
             FootballClub newClub = new FootballClub("Real Madrid", 1000);
 
@@ -98,24 +99,24 @@ namespace tutorial_wpf
             InitializeComponent();
         }
 
-        public void MainButton_Click(object sender, RoutedEventArgs e)
+        public void IgraciButton_Click(object sender, RoutedEventArgs e)
         {
-             
+            MainFrame.Navigate(new Uri("lista_igraca.xaml", UriKind.Relative));
         }
 
-        public void SecondaryButton_Click(object sender, RoutedEventArgs e)
+        public void UtakmiceButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Uri("Utakmice.xaml", UriKind.Relative));
+        }
+
+        private void TransferiButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ThirdlyButton_Click(object sender, RoutedEventArgs e)
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void FourthButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            MainFrame.Navigate(new Uri("About.xaml", UriKind.Relative));
         }
     }
 }

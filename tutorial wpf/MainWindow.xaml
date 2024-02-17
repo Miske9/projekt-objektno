@@ -5,60 +5,69 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:tutorial_wpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="Nogometni klub Smoljanci Sloboda"
     Width="800"
     Height="450"
     mc:Ignorable="d">
     <Grid Background="Purple">
         <Image Margin="361,0,-5,0" Source="C:/Users/matij/OneDrive/Radna površina/Mišan_Matija/tutorial wpf/tutorial wpf/nkss.jpeg" />
+        <Frame x:Name="MainFrame" />
         <StackPanel>
             <Label
                 x:Name="MainLabel"
-                TextBlock.TextAlignment="Center"
+                Width="287"
+                Height="25"
                 HorizontalAlignment="Center"
-                Background="#FFD4C71B" Height="25" Width="287" Content="&#x9;Nogometni klub Smoljanci Sloboda"/>
+                Background="#FFD4C71B"
+                Content="&#x9;Nogometni klub Smoljanci Sloboda"
+                TextBlock.TextAlignment="Center" />
             <Button
-                x:Name="MainButton"
+                x:Name="IgraciButton"
                 Width="298"
                 Height="84"
                 HorizontalAlignment="Left"
-                Click="MainButton_Click"
-                Cursor="Hand" Background="#FFFFE600"
+                Background="#FFFFE600"
+                Click="IgraciButton_Click"
+                Cursor="Hand"
                 TextBlock.FontSize="20"
                 TextBlock.FontStyle="Oblique">
                 IGRAČI
             </Button>
             <Label Height="20px" />
             <Button
-                x:Name="SecondaryButton"
+                x:Name="UtakmiceButton"
                 Width="298"
                 Height="84"
                 HorizontalAlignment="Left"
-                Click="SecondaryButton_Click"
-                Cursor="Hand" Background="#FFFFE600"
+                Background="#FFFFE600"
+                Click="UtakmiceButton_Click"
+                Cursor="Hand"
                 TextBlock.FontSize="20"
-                TextBlock.FontStyle="Oblique"> UTAKMICE
+                TextBlock.FontStyle="Oblique">
+                UTAKMICE
             </Button>
             <Label Height="20px" />
             <Button
-                x:Name="ThirdlyButton"
+                x:Name="TransferiButton"
                 Width="298"
                 Height="84"
                 HorizontalAlignment="Left"
-                Click="ThirdlyButton_Click"
-                Cursor="Hand" Background="#FFFFE600"
+                Background="#FFFFE600"
+                Click="TransferiButton_Click"
+                Cursor="Hand"
                 TextBlock.FontSize="20"
                 TextBlock.FontStyle="Oblique">
                 TRANSFERI
             </Button>
             <Label Height="20px" />
             <Button
-                x:Name="FourthButton"
+                x:Name="AboutButton"
                 Width="298"
                 Height="84"
                 HorizontalAlignment="Left"
-                Click="FourthButton_Click"
-                Cursor="Hand" Background="#FFFFE600"
+                Background="#FFFFE600"
+                Click="AboutButton_Click"
+                Cursor="Hand"
                 TextBlock.FontSize="20"
                 TextBlock.FontStyle="Oblique">
                 O NAMA
