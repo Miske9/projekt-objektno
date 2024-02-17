@@ -8,11 +8,19 @@
     Height="450">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
-
-            <ListBox ItemsSource="{Binding Players}" MouseDoubleClick="OnPlayerSelect">
+            <ListBox
+                Background="Purple"
+                ItemsSource="{Binding Players}"
+                MouseDoubleClick="OnPlayerSelect"
+                TextBlock.Foreground="Yellow">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel
+                            Width="780"
+                            Height="70"
+                            Background="Yellow"
+                            TextBlock.FontSize="12"
+                            TextBlock.Foreground="Purple">
                             <TextBlock Text="{Binding Name}" />
                             <TextBlock>
                                 <TextBlock.Style>

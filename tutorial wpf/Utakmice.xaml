@@ -11,10 +11,20 @@
     mc:Ignorable="d">
 
     <Grid Background="Purple">
-        <ListBox ItemsSource="{Binding Matches}" MouseDoubleClick="OnMatchSelect">
+        <ListBox
+            Background="Purple"
+            ItemsSource="{Binding Matches}"
+            MouseDoubleClick="OnMatchSelect"
+            TextBlock.Foreground="Yellow">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel
+                        Width="780"
+                        Height="50"
+                        Background="Yellow"
+                        Orientation="Horizontal"
+                        TextBlock.FontSize="20"
+                        TextBlock.Foreground="Purple">
                         <TextBlock FontWeight="Bold" Text="{Binding Opponent}" />
                         <TextBlock Text=" vs " />
                         <TextBlock FontWeight="Bold" Text="{Binding Klub}" />

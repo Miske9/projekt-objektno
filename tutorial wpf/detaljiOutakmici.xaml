@@ -10,103 +10,105 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Background="Purple" TextBlock.Foreground="yellow">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
+            FontSize="20"
             Text="Domaći: " />
         <TextBlock
             Grid.Row="0"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding Opponent}" />
 
         <TextBlock
             Grid.Row="1"
             Grid.Column="0"
+            FontSize="20"
             Text="Gosti:" />
         <TextBlock
             Grid.Row="1"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding Klub}" />
 
         <TextBlock
             Grid.Row="2"
             Grid.Column="0"
+            FontSize="20"
             Text="Lokacija:" />
         <TextBlock
             Grid.Row="2"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding Location}" />
 
         <TextBlock
             Grid.Row="3"
             Grid.Column="0"
+            FontSize="20"
             Text="Rezultat:" />
         <TextBlock
             Grid.Row="3"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding Result}" />
 
         <TextBlock
             Grid.Row="4"
             Grid.Column="0"
+            FontSize="20"
             Text="Natjecanje: " />
         <TextBlock
             Grid.Row="4"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding TeamType}" />
 
         <TextBlock
             Grid.Row="5"
             Grid.Column="0"
+            FontSize="20"
             Text="Domaći strijelac:" />
         <TextBlock
             Grid.Row="5"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding DomaciStrijelac}" />
 
         <TextBlock
             Grid.Row="6"
             Grid.Column="0"
+            FontSize="20"
             Text="Gostujući strijelac:" />
         <TextBlock
             Grid.Row="6"
-            Grid.Column="2"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            FontSize="20"
             Text="{Binding GostStrijelac}" />
-        <ListBox
-            Grid.Row="8"
-            Grid.Column="2"
-            Margin="-7,0,0,0"
-            BorderThickness="0"
-            ItemsSource="{Binding TransferHistory}">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="IsHitTestVisible" Value="False" />
-                </Style>
-            </ListBox.ItemContainerStyle>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
     </Grid>
 </Page>
