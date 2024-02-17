@@ -10,29 +10,21 @@
     d:DesignWidth="780"
     mc:Ignorable="d">
 
-    <Grid>
-        <ListBox ItemsSource="{Binding Players}">
+    <Grid Background="Purple">
+        <ListBox ItemsSource="{Binding Matches}" MouseDoubleClick="OnMatchSelect">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock>
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="{Binding CurrentClub.Name, FallbackValue=Nije u klubu}" />
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding CurrentClub.Name}" Value="{x:Null}">
-                                            <Setter Property="Text" Value="Nije u klubu" />
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding CurrentClub.Name}" Value="">
-                                            <Setter Property="Text" Value="Nije u klubu" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                        <TextBlock Text="{Binding Position}" />
-                        <TextBlock Text="{Binding MarketValue}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontWeight="Bold" Text="{Binding Opponent}" />
+                        <TextBlock Text=" vs " />
+                        <TextBlock FontWeight="Bold" Text="{Binding Klub}" />
+                        <TextBlock Text=" - " />
+                        <TextBlock Text="{Binding Location}" />
+                        <TextBlock Text=" (" />
+                        <TextBlock Text="{Binding Result}" />
+                        <TextBlock Text=" : " />
+                        <TextBlock Text="{Binding TeamType}" />
+                        <TextBlock Text=")" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

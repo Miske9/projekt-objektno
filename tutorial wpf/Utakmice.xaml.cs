@@ -26,31 +26,39 @@ namespace tutorial_wpf
             DataContext = new UtakmiceViewModel();
             InitializeComponent();
         }
-        public class UtakmiceViewModel
+        public void OnMatchSelect(object sender, EventArgs e)
         {
-            public ObservableCollection<Player> Matches { get; set; }
-            public UtakmiceViewModel()
+            if (sender is ListBox listBox && listBox.SelectedItem != null)
             {
-                Matches = new ObservableCollection<Player>();
-                FootballClub myClub = new FootballClub("Barecelona", 1000);
-                FootballClub newClub = new FootballClub("Real Madrid", 1000);
+                Match selectedMatch = listBox.SelectedItem as Match;
+                detaljiOutakmici detalji2Page = new detaljiOutakmici(selectedMatch);
 
-                Match match1 = new Match("Bilbao", "Domaća", "Prijateljska");
-                Match match2 = new Match("PSG", "Gostujuća", "Liga");
-                myClub.ScheduleMatch(match1);
-                myClub.ScheduleMatch(match2);
-
-                myClub.RecordMatchResult(match1, 2, 1);
-                myClub.RecordMatchResult(match2, 1, 1);
-
-                Console.WriteLine("Izvještaj o klubu: " + myClub.Name);
-
-                Console.WriteLine("\nRaspored utakmica:");
-                foreach (Match match in myClub.Matches)
-                {
-                    Console.WriteLine(match.ToString());
-                }
+                this.NavigationService.Navigate(detalji2Page);
             }
         }
     }
+    public class UtakmiceViewModel
+        {
+            public ObservableCollection<Match> Matches { get; set; }
+            public UtakmiceViewModel()
+            {
+                Matches = new ObservableCollection<Match>();
+                FootballClub myClub = new FootballClub("Barecelona", 344000);
+                FootballClub newClub = new FootballClub("Real Madrid", 500000);
+
+                Match match1 = new Match(myClub.Name, "Bilbao", "Stadion Gradski Vrt", "Champions League");
+                Match match2 = new Match(newClub.Name, "PSG", "Stadion Aldo Drosina", "Liga");
+                myClub.ScheduleMatch(match1);
+                newClub.ScheduleMatch(match2);
+
+                myClub.RecordMatchResult(match1, 2, 1);
+                newClub.RecordMatchResult(match2, 1, 1);
+
+                myClub.Strijelci(match1, "andi, Kluo", "indi");
+                newClub.Strijelci(match2, "Simon", "Klaun");
+
+                Matches.Add(match1);
+                Matches.Add(match2);
+            }
+        }
 }

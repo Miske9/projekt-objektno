@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace tutorial_wpf
 {
-    public class Player(string name, int age, string position, decimal marketValue)
+    public class Player(string name, int age,string kategorija, string position, decimal marketValue)
     {
         public string Name { get; } = name;
         public int Age { get; } = age;
         public string Position { get; } = position;
+        public string Kategorija {get; }= kategorija;
         public int GoalsScored { get; private set; }
         public int Assists { get; private set; }
         public decimal MarketValue { get; private set; } = marketValue;

@@ -50,16 +50,16 @@
             </Button>
             <Label Height="20px" />
             <Button
-                x:Name="TransferiButton"
+                x:Name="KategorijeButton"
                 Width="298"
                 Height="70"
                 HorizontalAlignment="Left"
                 Background="#FFFFE600"
-                Click="TransferiButton_Click"
+                Click="KategorijeButton_Click"
                 Cursor="Hand"
                 TextBlock.FontSize="20"
                 TextBlock.FontStyle="Oblique">
-                TRANSFERI
+                KATEGORIJE
             </Button>
             <Label Height="20px" />
             <Button

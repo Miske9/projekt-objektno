@@ -20,9 +20,10 @@ namespace tutorial_wpf
     /// </summary>
     public partial class Detalji_o_Igracu : Page
     {
-        public Detalji_o_Igracu()
+        public Detalji_o_Igracu(Player player)
         {
             InitializeComponent();
+            DataContext = player;
         }
     }
 }

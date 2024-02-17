@@ -19,6 +19,22 @@ namespace tutorial_wpf
             DataContext = new ListaIgracaViewModel();
             InitializeComponent();
         }
+
+        public void OnPlayerSelect(object sender, EventArgs e)
+        {
+            if (sender is ListBox listBox && listBox.SelectedItem != null)
+            {
+                Player selectedPlayer = listBox.SelectedItem as Player;
+                Detalji_o_Igracu detaljiPage = new Detalji_o_Igracu(selectedPlayer);
+
+                this.NavigationService.Navigate(detaljiPage);
+            }
+        }
+
+        private void ListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 
     public class ListaIgracaViewModel
@@ -28,11 +44,11 @@ namespace tutorial_wpf
         public ListaIgracaViewModel()
         {
             Players = new ObservableCollection<Player>();
-            FootballClub myClub = new FootballClub("Barecelona", 1000);
-            FootballClub newClub = new FootballClub("Real Madrid", 1000);
+            FootballClub myClub = new FootballClub("Barecelona", 33);
+            FootballClub newClub = new FootballClub("Real Madrid", 2);
 
-            Player player1 = new Player("Messi", 10, "Napadač", 100);
-            Player player2 = new Player("Ronaldo", 7, "Vezni", 200);
+            Player player1 = new Player("Paulo", 10,"Senior", "Napadač", 33);
+            Player player2 = new Player("Kaneko", 7,"Junior", "Vezni", 23);
 
             myClub.AddPlayer(player1);
             newClub.AddPlayer(player2);

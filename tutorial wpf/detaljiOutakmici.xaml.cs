@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,13 +17,14 @@ using System.Windows.Shapes;
 namespace tutorial_wpf
 {
     /// <summary>
-    /// Interaction logic for Transferi.xaml
+    /// Interaction logic for detaljiOutakmici.xaml
     /// </summary>
-    public partial class Transferi : Page
+    public partial class detaljiOutakmici : Page
     {
-        public Transferi()
+        public detaljiOutakmici(Match match)
         {
             InitializeComponent();
+            DataContext = match;
         }
     }
 }

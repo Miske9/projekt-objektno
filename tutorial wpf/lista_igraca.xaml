@@ -9,7 +9,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
 
-            <ListBox ItemsSource="{Binding Players}">
+            <ListBox ItemsSource="{Binding Players}" MouseDoubleClick="OnPlayerSelect">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

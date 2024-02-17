@@ -11,6 +11,8 @@ namespace tutorial_wpf
     public class FootballClub
     {
         public string Name { get; }
+        public string DomaciStrijelac { get; set; }
+        public string GostStrijelac { get; set; }
         public List<Player> Players { get; } = new List<Player>();
         public List<Match> Matches { get; } = new List<Match>();
         public decimal Finances { get; private set; }
@@ -55,7 +57,13 @@ namespace tutorial_wpf
 
             Console.WriteLine($"Utakmica {match.Opponent} ({match.TeamType}) završila rezultatom {match.Result}.");
         }
-
+        public void Strijelci(Match match, string domaciStrijelac, string gostStrijelac)
+        {
+            DomaciStrijelac = domaciStrijelac;
+            GostStrijelac = gostStrijelac;
+            match.DomaciStrijelac = domaciStrijelac;
+            match.GostStrijelac = gostStrijelac;
+        }
 
         public void TransferPlayer(Player player, FootballClub newClub)
         {

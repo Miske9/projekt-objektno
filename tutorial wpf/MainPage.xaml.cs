@@ -37,10 +37,10 @@ namespace tutorial_wpf
             this.NavigationService.Navigate(utakmicaPage);
         }
 
-        private void TransferiButton_Click(object sender, RoutedEventArgs e)
+        private void KategorijeButton_Click(object sender, RoutedEventArgs e)
         {
-            Transferi transferPage = new Transferi();
-            this.NavigationService.Navigate(transferPage);
+            Kategorije katPage = new Kategorije();
+            this.NavigationService.Navigate(katPage);
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
