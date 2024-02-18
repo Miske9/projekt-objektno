@@ -56,7 +56,7 @@
             Grid.Row="2"
             Grid.Column="2"
             FontSize="20"
-            Text="{Binding Kategorija}" />
+            Text="{Binding Category}" />
 
         <TextBlock
             Grid.Row="3"

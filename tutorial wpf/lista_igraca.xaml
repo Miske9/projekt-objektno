@@ -8,41 +8,45 @@
     Height="450">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
-            <ListBox
-                Background="Purple"
+            <ListView
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Background="MediumPurple"
                 ItemsSource="{Binding Players}"
                 MouseDoubleClick="OnPlayerSelect"
-                TextBlock.Foreground="Yellow">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel
-                            Width="780"
-                            Height="70"
-                            Background="Yellow"
-                            TextBlock.FontSize="12"
-                            TextBlock.Foreground="Purple">
-                            <TextBlock Text="{Binding Name}" />
-                            <TextBlock>
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text" Value="{Binding CurrentClub.Name, FallbackValue=Nije u klubu}" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding CurrentClub.Name}" Value="{x:Null}">
-                                                <Setter Property="Text" Value="Nije u klubu" />
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding CurrentClub.Name}" Value="">
-                                                <Setter Property="Text" Value="Nije u klubu" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Text="{Binding Position}" />
-                            <TextBlock Text="{Binding MarketValue}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                TextBlock.Foreground="Black">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn
+                            Width="100"
+                            DisplayMemberBinding="{Binding Name}"
+                            Header="Ime" />
+                        <GridViewColumn
+                            Width="100"
+                            DisplayMemberBinding="{Binding Category}"
+                            Header="Kategorija" />
+                        <GridViewColumn Header="Klub">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding CurrentClub.Name, FallbackValue=Nije u klubu}" />
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding CurrentClub.Name}" Value="{x:Null}" />
+                                        <DataTrigger Binding="{Binding CurrentClub.Name}" Value="" />
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn
+                            Width="100"
+                            DisplayMemberBinding="{Binding Position}"
+                            Header="Pozicija" />
+                        <GridViewColumn
+                            Width="100"
+                            DisplayMemberBinding="{Binding MarketValue}"
+                            Header="Vrijednost" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
     </ScrollViewer>
 </Page>

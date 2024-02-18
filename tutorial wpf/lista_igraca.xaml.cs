@@ -30,11 +30,6 @@ namespace tutorial_wpf
                 this.NavigationService.Navigate(detaljiPage);
             }
         }
-
-        private void ListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 
     public class ListaIgracaViewModel
