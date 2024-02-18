@@ -1,14 +1,47 @@
-﻿<Page x:Class="tutorial_wpf.About"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:tutorial_wpf"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="About">
+﻿<Page
+    x:Class="tutorial_wpf.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:tutorial_wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="About"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
 
     <Grid>
-        
+        <StackPanel Margin="20">
+            <TextBlock
+                FontSize="18"
+                FontWeight="Bold"
+                Text="O nama" />
+            <TextBlock Margin="0,10,0,0" Text="Mi smo Nogometni Klub Smoljanci Sloboda!" />
+            <!--  Ostali tekst i dizajn ovdje  -->
+            <TextBlock
+                Margin="0,20,0,10"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Kontaktirajte nas" />
+            <StackPanel>
+                <TextBlock Text="Lokacija:" />
+                <TextBlock Text="{Binding Location}" />
+            </StackPanel>
+            <Label />
+            <StackPanel>
+                <TextBlock Text="Adresa:" />
+                <TextBlock Text="{Binding Address}" />
+            </StackPanel>
+            <Label />
+            <StackPanel>
+                <TextBlock Text="Telefon:" />
+                <TextBlock Text="{Binding Phone}" />
+            </StackPanel>
+            <Label />
+            <StackPanel>
+                <TextBlock Text="Fax:" />
+                <TextBlock Text="{Binding Fax}" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
