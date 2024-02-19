@@ -7,15 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainPage"
     d:DesignHeight="450"
-    d:DesignWidth="800"
-    mc:Ignorable="d"
-    Loaded="Page_Loaded">
+    d:DesignWidth="780"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
     <Page.Resources>
         <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
     </Page.Resources>
     <Grid Background="Purple">
 
-         <Image Margin="361,0,-5,0" Source="C:/Users/matij/OneDrive/Radna površina/Mišan_Matija/tutorial wpf/tutorial wpf/nkss.jpeg" />
+        <Image Margin="329,-70,0,-70" Source="C:/Users/matij/OneDrive/Radna površina/Mišan_Matija/tutorial wpf/tutorial wpf/nkss.jpeg" />
         <StackPanel>
             <Frame x:Name="MainFrame" />
             <Label
@@ -78,6 +78,6 @@
                 TextBlock.FontStyle="Oblique">
                 O NAMA
             </Button>
-        </StackPanel> 
+        </StackPanel>
     </Grid>
 </Page>

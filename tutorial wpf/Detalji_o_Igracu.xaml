@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:tutorial_wpf"
     Title="Detalji o Igracu">
 
-    <Grid Background="Purple" TextBlock.Foreground="yellow">
+    <Grid Background="AntiqueWhite" TextBlock.Foreground="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="20" />
@@ -122,11 +122,11 @@
             Grid.Row="8"
             Grid.Column="2"
             Margin="-7,0,0,0"
-            Background="Purple"
+            Background="AntiqueWhite"
             BorderThickness="0"
             ItemsSource="{Binding TransferHistory}"
             TextBlock.FontSize="20"
-            TextBlock.Foreground="Yellow">
+            TextBlock.Foreground="Black">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="IsHitTestVisible" Value="False" />

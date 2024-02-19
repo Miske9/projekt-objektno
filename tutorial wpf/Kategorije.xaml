@@ -14,7 +14,9 @@
         <ListView
             HorizontalContentAlignment="Stretch"
             VerticalContentAlignment="Stretch"
-            ItemsSource="{Binding Players}">
+            Background="AntiqueWhite"
+            ItemsSource="{Binding Players}"
+            TextBlock.Foreground="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
