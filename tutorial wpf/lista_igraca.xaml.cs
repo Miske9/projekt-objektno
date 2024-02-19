@@ -20,7 +20,7 @@ namespace tutorial_wpf
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _context.Database.EnsureCreated();
-            _context.Players.Add(new Player("Ronaldo", 10, "Senior", "Real Madrid", 100));
+            _context.Players.Add(new Player("Ronaldo", 10, "Senior", "Smoljanci Sloboda", 100));
             _context.SaveChanges();
             playersViewSource.Source = _context.Players.Local.ToObservableCollection();
         }

@@ -10,21 +10,19 @@
     d:DesignWidth="780"
     mc:Ignorable="d">
 
-    <Grid Background="Purple">
+    <Grid >
         <ListBox
-            Background="Purple"
+            Background="AntiqueWhite"
             ItemsSource="{Binding Matches}"
             MouseDoubleClick="OnMatchSelect"
-            TextBlock.Foreground="Yellow">
+            TextBlock.Foreground="Black">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel
                         Width="780"
-                        Height="50"
-                        Background="Yellow"
+                        Height="30"
                         Orientation="Horizontal"
-                        TextBlock.FontSize="20"
-                        TextBlock.Foreground="Purple">
+                        TextBlock.FontSize="10">
                         <TextBlock FontWeight="Bold" Text="{Binding Opponent}" />
                         <TextBlock Text=" vs " />
                         <TextBlock FontWeight="Bold" Text="{Binding Klub}" />
