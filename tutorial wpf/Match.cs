@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace tutorial_wpf
 {
     public class Match
     {
+        public int MatchId { get; set; }
         public string DomaciStrijelac { get; set; }
         public string GostStrijelac { get; set; }
         public string Opponent { get; }
@@ -18,10 +15,11 @@ namespace tutorial_wpf
         public string Result { get; set; }
         public string TeamType { get; }
 
-        public Match(string opponent, string a2,string location, string teamType)
+        public Match() { }
+        public Match(string opponent, string klub, string location, string teamType)
         {
             Opponent = opponent;
-            Klub = a2;
+            Klub = klub;
             Location = location;
             Result = "N/A";
             TeamType = teamType;
@@ -40,5 +38,4 @@ namespace tutorial_wpf
             return $"{Opponent} {Klub}- {Location} {TeamType} ({HomeGoals} : {AwayGoals}) ";
         }
     }
-
 }

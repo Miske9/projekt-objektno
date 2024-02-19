@@ -1,31 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace tutorial_wpf
 {
-    /// <summary>
-    /// Interaction logic for MainPage.xaml
-    /// </summary>
     public partial class MainPage : Page
     {
+        private readonly FootballDbContext _context = new FootballDbContext();
+        private CollectionViewSource playersViewSource;
+
+
         public MainPage()
         {
             InitializeComponent();
+            playersViewSource =
+    (CollectionViewSource)FindResource(nameof(playersViewSource));
         }
 
-
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context.Database.EnsureCreated();
+            _context.Players.Add(new Player("Ronaldo", 10, "Senior", "Real Madrid", 100));
+            _context.SaveChanges();
+            playersViewSource.Source = _context.Players.Local.ToObservableCollection();
+        }
         private void IgraciButton_Click(object sender, RoutedEventArgs e)
         {
             lista_igraca igracipage = new lista_igraca();

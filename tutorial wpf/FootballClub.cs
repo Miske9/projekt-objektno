@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace tutorial_wpf
 {
     public class FootballClub
     {
+        public int FootballClubId { get; set; }
         public string Name { get; }
         public string DomaciStrijelac { get; set; }
         public string GostStrijelac { get; set; }
-        public List<Player> Players { get; } = new List<Player>();
-        public List<Match> Matches { get; } = new List<Match>();
+        public virtual List<Player> Players { get; } = new List<Player>();
+        public virtual List<Match> Matches { get; } = new List<Match>();
         public decimal Finances { get; private set; }
-        public List<Transfer> TransferHistory { get; } = new List<Transfer>();
+        public virtual List<Transfer> TransferHistory { get; } = new List<Transfer>();
 
+        public FootballClub() { }
         public FootballClub(string name, decimal initialFinances)
         {
             Name = name;
@@ -41,8 +41,8 @@ namespace tutorial_wpf
 
             foreach (Player player in Players)
             {
-                if (match.TeamType == "Domaća" && player.CurrentClub == this ||
-                    match.TeamType == "Gostujuća" && player.CurrentClub != this)
+                if ((match.TeamType == "Domaci" && player.CurrentClub == this) ||
+                    (match.TeamType == "Gostujuci" && player.CurrentClub != this))
                 {
                     if (goalsFor > goalsAgainst)
                     {
@@ -55,8 +55,9 @@ namespace tutorial_wpf
                 }
             }
 
-            Console.WriteLine($"Utakmica {match.Opponent} ({match.TeamType}) završila rezultatom {match.Result}.");
+            Console.WriteLine($"Match {match.Opponent} ({match.TeamType}) ended with the result {match.Result}.");
         }
+
         public void Strijelci(Match match, string domaciStrijelac, string gostStrijelac)
         {
             DomaciStrijelac = domaciStrijelac;
@@ -76,11 +77,11 @@ namespace tutorial_wpf
 
                 TransferHistory.Add(new Transfer(this, newClub, player.MarketValue));
 
-                Console.WriteLine($"Igrač {player.Name} uspješno prešao iz {Name} u {newClub.Name} za transfernu naknadu od {player.MarketValue:C}.");
+                Console.WriteLine($"Player {player.Name} successfully transferred from {Name} to {newClub.Name} for a transfer fee of {player.MarketValue:C}.");
             }
             else
             {
-                Console.WriteLine($"Prijenos igrača {player.Name} nije uspio. Provjeri ima li igrač u klubu i jesu li financije dovoljne.");
+                Console.WriteLine($"Player transfer {player.Name} failed. Check if the player is in the club and if the finances are sufficient.");
             }
         }
     }

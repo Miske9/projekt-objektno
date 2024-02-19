@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace tutorial_wpf
 {
     public class Transfer
     {
+        public int TransferId { get; set; }
         public FootballClub? FromClub { get; }
         public FootballClub? ToClub { get; }
         public decimal TransferFee { get; }
 
+        public Transfer() { }
         public Transfer(FootballClub? fromClub, FootballClub? toClub, decimal transferFee)
         {
             FromClub = fromClub;
@@ -21,7 +19,11 @@ namespace tutorial_wpf
 
         public override string ToString()
         {
-            if (FromClub == null)
+            if (FromClub == null && ToClub == null)
+            {
+                return "N/A";
+            }
+            else if (FromClub == null)
             {
                 return $"{ToClub?.Name} ({TransferFee:C})";
             }
@@ -29,21 +31,13 @@ namespace tutorial_wpf
             {
                 return $"{FromClub.Name} ({TransferFee:C})";
             }
-            else if (FromClub == null && ToClub == null)
-            {
-                return "N/A";
-            }
             else if (FromClub == ToClub)
             {
                 return $"{FromClub.Name} ({TransferFee:C})";
             }
-            else if (FromClub != ToClub)
-            {
-                return $"{FromClub?.Name} -> {ToClub.Name} ({TransferFee:C})";
-            }
             else
             {
-                return "N/A";
+                return $"{FromClub?.Name} -> {ToClub.Name} ({TransferFee:C})";
             }
         }
     }

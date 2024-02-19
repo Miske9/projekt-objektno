@@ -8,4 +8,6 @@
     Title="Nogometni klub Smoljanci Sloboda"
     Width="800"
     Height="450"
-    Source="MainPage.xaml" />
+    Source="MainPage.xaml" 
+    >
+</NavigationWindow>

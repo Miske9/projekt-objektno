@@ -5,14 +5,18 @@
     xmlns:local="clr-namespace:tutorial_wpf"
     Title="Lista Igraca"
     Width="785"
-    Height="450">
+    Height="450"
+    Loaded="Page_Loaded">
+    <Page.Resources>
+        <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
+    </Page.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <ListView
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
                 Background="MediumPurple"
-                ItemsSource="{Binding Players}"
+                 ItemsSource="{Binding Source={StaticResource playersViewSource}}"
                 MouseDoubleClick="OnPlayerSelect"
                 TextBlock.Foreground="Black">
                 <ListView.View>

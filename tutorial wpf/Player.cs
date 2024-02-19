@@ -1,24 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tutorial_wpf
+﻿namespace tutorial_wpf
 {
-    public class Player(string name, int age,string category, string position, decimal marketValue)
+    public class Player
     {
-        public string Name { get; } = name;
-        public int Age { get; } = age;
-        public string Position { get; } = position;
-        public string Category { get; set; } = category;
+        public Player() { }
+        public Player(string name, int age, string category, string position, decimal marketValue)
+        {
+            Name = name;
+            Age = age;
+            Category = category;
+            Position = position;
+            MarketValue = marketValue;
+        }
+
+        public int PlayerId { get; set; }
+        public string Name { get; }
+        public int Age { get; }
+        public string Position { get; }
+        public string Category { get; set; }
         public int GoalsScored { get; private set; }
         public int Assists { get; private set; }
-        public decimal MarketValue { get; private set; } = marketValue;
-        public FootballClub? CurrentClub { get; private set; }
+        public decimal MarketValue { get; private set; }
+        public virtual FootballClub? CurrentClub { get; private set; }
 
-        public List<Transfer> TransferHistory { get; } = new List<Transfer>();
+        public virtual List<Transfer> TransferHistory { get; } = new List<Transfer>();
 
         public void ScoreGoal()
         {
@@ -33,7 +37,7 @@ namespace tutorial_wpf
         public void TransferToClub(FootballClub newClub, decimal transferFee)
         {
             TransferHistory.Add(new Transfer(CurrentClub, newClub, transferFee));
-            CurrentClub= newClub;
+            CurrentClub = newClub;
         }
 
         public override string ToString()
@@ -41,5 +45,4 @@ namespace tutorial_wpf
             return $"{Name} ({Age} godina) - {Position} | Golovi: {GoalsScored}, Asistencije: {Assists}, Tržišna vrijednost: {MarketValue:C}";
         }
     }
-
 }
