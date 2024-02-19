@@ -48,7 +48,6 @@ namespace tutorial_wpf
             AddTeam("Milan", 20, 14, 3, 3, 45);
             AddTeam("Dinamo", 20, 16, 4, 0, 52);
             AddTeam("Manchester United", 20, 5, 5, 10, 20);
-            AddTeam("Liverpool", 20, 5, 10, 5, 25);
             AddTeam("Lyon", 20, 5, 7, 8, 22);
             AddTeam("Al Nassr", 20, 11, 5, 4, 38);
             AddTeam("Coventry", 20, 10, 0, 10, 30);
