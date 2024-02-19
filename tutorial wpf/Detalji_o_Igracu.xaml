@@ -95,49 +95,12 @@
             Grid.Row="6"
             Grid.Column="0"
             FontSize="20"
-            Text="Marketna vrijednost:" />
+            Text="Marketna vrijednost ($):" />
         <TextBlock
             Grid.Row="6"
             Grid.Column="2"
             FontSize="20"
             Text="{Binding MarketValue}" />
-
-        <TextBlock
-            Grid.Row="7"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Trenutni klub:" />
-        <TextBlock
-            Grid.Row="7"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding CurrentClub.Name}" />
-
-        <TextBlock
-            Grid.Row="8"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Povijest transfera:" />
-        <ListBox
-            Grid.Row="8"
-            Grid.Column="2"
-            Margin="-7,0,0,0"
-            Background="AntiqueWhite"
-            BorderThickness="0"
-            ItemsSource="{Binding TransferHistory}"
-            TextBlock.FontSize="20"
-            TextBlock.Foreground="Black">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="IsHitTestVisible" Value="False" />
-                </Style>
-            </ListBox.ItemContainerStyle>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
     </Grid>
 </Page>
 

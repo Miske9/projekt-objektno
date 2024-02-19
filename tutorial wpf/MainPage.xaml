@@ -63,7 +63,7 @@
                 Cursor="Hand"
                 TextBlock.FontSize="20"
                 TextBlock.FontStyle="Oblique">
-                KATEGORIJE
+                TABLICA
             </Button>
             <Label Height="20px" />
             <Button

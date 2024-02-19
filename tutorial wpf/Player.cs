@@ -3,13 +3,15 @@
     public class Player
     {
         public Player() { }
-        public Player(string name, int age, string category, string position, decimal marketValue)
+        public Player(string name, int age, string category, string position, decimal marketValue, int goals, int assists)
         {
             Name = name;
             Age = age;
             Category = category;
             Position = position;
             MarketValue = marketValue;
+            GoalsScored = goals;
+            Assists = assists;
         }
 
         public int PlayerId { get; set; }

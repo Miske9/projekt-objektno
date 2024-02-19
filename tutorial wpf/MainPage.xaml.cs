@@ -20,13 +20,13 @@ namespace tutorial_wpf
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _context.Database.EnsureCreated();
-            _context.Players.Add(new Player("Ronaldo", 10, "Senior", "Real Madrid", 100));
+            _context.Players.Add(new Player("Ronaldo", 10, "Senior", "Smoljanci Sloboda", 100, 43, 55));
             _context.SaveChanges();
             playersViewSource.Source = _context.Players.Local.ToObservableCollection();
         }
         private void IgraciButton_Click(object sender, RoutedEventArgs e)
         {
-            lista_igraca igracipage = new lista_igraca();
+            Kategorije igracipage = new Kategorije();
             this.NavigationService.Navigate(igracipage);
         }
         private void UtakmiceButton_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace tutorial_wpf
 
         private void KategorijeButton_Click(object sender, RoutedEventArgs e)
         {
-            Kategorije katPage = new Kategorije();
+            Tablica katPage = new Tablica();
             this.NavigationService.Navigate(katPage);
         }
 

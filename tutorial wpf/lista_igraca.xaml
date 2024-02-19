@@ -16,7 +16,7 @@
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
                 Background="MediumPurple"
-                 ItemsSource="{Binding Source={StaticResource playersViewSource}}"
+                ItemsSource="{Binding Source={StaticResource playersViewSource}}"
                 MouseDoubleClick="OnPlayerSelect"
                 TextBlock.Foreground="Black">
                 <ListView.View>

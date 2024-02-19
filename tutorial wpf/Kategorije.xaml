@@ -9,13 +9,17 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
+    </Page.Resources>
     <Grid>
         <ListView
             HorizontalContentAlignment="Stretch"
             VerticalContentAlignment="Stretch"
             Background="AntiqueWhite"
-            ItemsSource="{Binding Players}"
+            DisplayMemberPath="Name"
+            ItemsSource="{Binding Source={StaticResource playersViewSource}}"
+            MouseDoubleClick="Navigacija"
             TextBlock.Foreground="Black">
             <ListView.View>
                 <GridView>
@@ -38,7 +42,7 @@
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding MarketValue}"
-                        Header="Vrijednost" />
+                        Header="Vrijednost ($)" />
                 </GridView>
             </ListView.View>
         </ListView>
