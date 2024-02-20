@@ -98,9 +98,9 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox x:Name="txtName" Width="100" Height="20" Margin="5"/>
-                    <TextBox x:Name="txtAge" Width="50" Height="20" Margin="5"/>
+                    <TextBox x:Name="txtAge" Width="50" Height="20" Margin="5" InputScope="Number"/>
                     <TextBox x:Name="txtPosition" Width="75" Height="20" Margin="5" />
-                    <TextBox x:Name="txtMarketValue" Width="50" Height="20" Margin="5" />
+                    <TextBox x:Name="txtMarketValue" Width="50" Height="20" Margin="5" InputScope="Number"/>
                 </StackPanel>
                 <Button Content="Save" Click="SavePlayer_Click" Margin="5" Width="auto" Height="20"/>
             </StackPanel>

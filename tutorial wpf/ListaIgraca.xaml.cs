@@ -51,12 +51,22 @@ namespace tutorial_wpf
         }
         private void SavePlayer_Click(object sender, RoutedEventArgs e)
         {
-            if (txtName.Text == "" || txtAge.Text == "" || txtMarketValue.Text == "" || txtPosition.Text == "") return;
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPosition.Text) || string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(txtMarketValue.Text))
+            {
+                MessageBox.Show("Molimo popunite sva polja.", "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            int age, marketValue;
+            if (!int.TryParse(txtAge.Text, out age) || !int.TryParse(txtMarketValue.Text, out marketValue))
+            {
+                MessageBox.Show("Godine i vrijednost na tržištu trebaju biti cijeli brojevi.", "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             string name = txtName.Text;
-            int age = int.Parse(txtAge.Text);
+            age = int.Parse(txtAge.Text);
             string category = age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran"; // Determine category based on age
             string position = txtPosition.Text;
-            int marketValue = int.Parse(txtMarketValue.Text);
+            marketValue = int.Parse(txtMarketValue.Text);
             newPlayer = new Player(name, age, category, position, marketValue, 0, 0);
             txtName.Text = "";
             txtAge.Text = "";
