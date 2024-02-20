@@ -5,102 +5,108 @@
     xmlns:local="clr-namespace:tutorial_wpf"
     Title="Detalji o Igracu">
 
-    <Grid Background="AntiqueWhite" TextBlock.Foreground="Black">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="AntiqueWhite" TextBlock.Foreground="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Ime:" />
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding Name}" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Ime:" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding Name}" />
 
-        <TextBlock
-            Grid.Row="1"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Godine:" />
-        <TextBlock
-            Grid.Row="1"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding Age}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Godine:" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding Age}" />
 
-        <TextBlock
-            Grid.Row="2"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Kategorija:" />
-        <TextBlock
-            Grid.Row="2"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding Category}" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Kategorija:" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding Category}" />
 
-        <TextBlock
-            Grid.Row="3"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Pozicija:" />
-        <TextBlock
-            Grid.Row="3"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding Position}" />
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Pozicija:" />
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding Position}" />
 
-        <TextBlock
-            Grid.Row="4"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Postignuti golovi:" />
-        <TextBlock
-            Grid.Row="4"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding GoalsScored}" />
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Postignuti golovi:" />
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding GoalsScored}" />
 
-        <TextBlock
-            Grid.Row="5"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Asistencije:" />
-        <TextBlock
-            Grid.Row="5"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding Assists}" />
+            <TextBlock
+                Grid.Row="5"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Asistencije:" />
+            <TextBlock
+                Grid.Row="5"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding Assists}" />
 
-        <TextBlock
-            Grid.Row="6"
-            Grid.Column="0"
-            FontSize="20"
-            Text="Marketna vrijednost ($):" />
-        <TextBlock
-            Grid.Row="6"
-            Grid.Column="2"
-            FontSize="20"
-            Text="{Binding MarketValue}" />
-    </Grid>
+            <TextBlock
+                Grid.Row="6"
+                Grid.Column="0"
+                FontSize="20"
+                Text="Marketna vrijednost ($):" />
+            <TextBlock
+                Grid.Row="6"
+                Grid.Column="2"
+                FontSize="20"
+                Text="{Binding MarketValue}" />
+        </Grid>
+    </ScrollViewer>
 </Page>
 

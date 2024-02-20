@@ -1,110 +1,179 @@
 ﻿<Page
-   x:Class="tutorial_wpf.ListaIgraca"
-   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:local="clr-namespace:tutorial_wpf"
-   Title="Lista Igraca"
-   Width="785"
-   Height="500"
-   Loaded="Page_Loaded">
+    x:Class="tutorial_wpf.ListaIgraca"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:tutorial_wpf"
+    Title="Lista Igraca"
+    Width="785"
+    Height="500"
+    Loaded="Page_Loaded">
     <Page.Resources>
         <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
     </Page.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Background="AntiqueWhite">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" MinHeight="200"/>
+                <RowDefinition Height="Auto" MinHeight="200" />
                 <RowDefinition Height="150" />
                 <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ListView
-				Grid.Row="0"
-         HorizontalContentAlignment="Stretch"
-         VerticalContentAlignment="Stretch"
-         Background="AntiqueWhite"
-         ItemsSource="{Binding Source={StaticResource playersViewSource}}"
-				MouseDoubleClick="OnPlayerSelect"
-         TextBlock.Foreground="Black">
+                Grid.Row="0"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Background="AntiqueWhite"
+                ItemsSource="{Binding Source={StaticResource playersViewSource}}"
+                MouseDoubleClick="OnPlayerSelect"
+                TextBlock.Foreground="Black">
                 <ListView.View>
                     <GridView>
-                        <!-- Name -->
-                        <GridViewColumn
-               Width="100"
-               Header="Ime">
+                        <!--  Name  -->
+                        <GridViewColumn Width="100" Header="Ime">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Name}" Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
+                                    <TextBox
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        IsReadOnly="True"
+                                        Text="{Binding Name}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!-- Age -->
-                        <GridViewColumn
-               Width="50"
-               Header="Godine">
+                        <!--  Age  -->
+                        <GridViewColumn Width="50" Header="Godine">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Age}"  Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
+                                    <TextBox
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        IsReadOnly="True"
+                                        Text="{Binding Age}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!-- Category -->
-                        <GridViewColumn
-               Width="100"
-               Header="Kategorija">
+                        <!--  Category  -->
+                        <GridViewColumn Width="100" Header="Kategorija">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Category}"  Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
+                                    <TextBox
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        IsReadOnly="True"
+                                        Text="{Binding Category}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!-- Position -->
-                        <GridViewColumn
-               Width="100"
-               Header="Pozicija">
+                        <!--  Position  -->
+                        <GridViewColumn Width="100" Header="Pozicija">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Position}"  Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
+                                    <TextBox
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        IsReadOnly="True"
+                                        Text="{Binding Position}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!-- Market Value -->
-                        <GridViewColumn
-               Width="100"
-               Header="Vrijednost">
+                        <!--  Market Value  -->
+                        <GridViewColumn Width="100" Header="Vrijednost">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding MarketValue, Mode=OneWay}"  Background="Transparent" BorderThickness="0" IsReadOnly="True"/>
+                                    <TextBox
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        IsReadOnly="True"
+                                        Text="{Binding MarketValue, Mode=OneWay}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!-- Remove button -->
+                        <!--  Remove button  -->
                         <GridViewColumn Width="100" Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Remove" Click="RemovePlayer_Click" CommandParameter="{Binding}"/>
+                                    <Button
+                                        Click="RemovePlayer_Click"
+                                        CommandParameter="{Binding}"
+                                        Content="Remove" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5" Width="315" x:Name="addPlayerForm" Visibility="Collapsed">
+            <StackPanel
+                x:Name="addPlayerForm"
+                Grid.Row="1"
+                Width="315"
+                Margin="5"
+                Orientation="Vertical"
+                Visibility="Collapsed">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Ime" Width="100" Height="28"
-						   />
-                    <Label Content="Age" Width="50" Height="28" Margin="10,0,0,0"/>
-                    <Label Content="Position" Width="75" Height="28" Margin="10,0,0,0"/>
-                    <Label Content="Market Value" Width="100" Height="28" Margin="10,0,0,0"/>
+                    <Label
+                        Width="100"
+                        Height="28"
+                        Content="Ime" />
+                    <Label
+                        Width="50"
+                        Height="28"
+                        Margin="10,0,0,0"
+                        Content="Age" />
+                    <Label
+                        Width="75"
+                        Height="28"
+                        Margin="10,0,0,0"
+                        Content="Position" />
+                    <Label
+                        Width="100"
+                        Height="28"
+                        Margin="10,0,0,0"
+                        Content="Market Value" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="txtName" Width="100" Height="20" Margin="5"/>
-                    <TextBox x:Name="txtAge" Width="50" Height="20" Margin="5" InputScope="Number"/>
-                    <TextBox x:Name="txtPosition" Width="75" Height="20" Margin="5" />
-                    <TextBox x:Name="txtMarketValue" Width="50" Height="20" Margin="5" InputScope="Number"/>
+                    <TextBox
+                        x:Name="txtName"
+                        Width="100"
+                        Height="20"
+                        Margin="5" />
+                    <TextBox
+                        x:Name="txtAge"
+                        Width="50"
+                        Height="20"
+                        Margin="5"
+                        InputScope="Number" />
+                    <TextBox
+                        x:Name="txtPosition"
+                        Width="75"
+                        Height="20"
+                        Margin="5" />
+                    <TextBox
+                        x:Name="txtMarketValue"
+                        Width="50"
+                        Height="20"
+                        Margin="5"
+                        InputScope="Number" />
                 </StackPanel>
-                <Button Content="Save" Click="SavePlayer_Click" Margin="5" Width="auto" Height="20"/>
+                <Button
+                    Width="auto"
+                    Height="20"
+                    Margin="5"
+                    Click="SavePlayer_Click"
+                    Content="Save" />
             </StackPanel>
-            <Button Grid.Row="2" x:Name="AddPlayerButton" Width="200" Content="Add Player" Click="AddPlayer_Click" Margin="5" Height="20"/>
+            <Button
+                x:Name="AddPlayerButton"
+                Grid.Row="2"
+                Width="200"
+                Height="20"
+                Margin="5,-200,5,5"
+                Click="AddPlayer_Click"
+                Content="Add Player" />
         </Grid>
     </ScrollViewer>
 </Page>
