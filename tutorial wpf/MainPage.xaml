@@ -16,7 +16,7 @@
             <Label Height="5px" />
             <Label
                 x:Name="MainLabel"
-                Width="339"
+                Width="368"
                 Height="31"
                 Margin="383,0,0,0"
                 HorizontalAlignment="Right"
