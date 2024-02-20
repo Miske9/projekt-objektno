@@ -25,7 +25,7 @@ namespace tutorial_wpf
         public int GoalsScored { get; set; }
         public int Assists { get; set; }
         public int MarketValue { get; private set; }
-        public virtual FootballClub? CurrentClub { get; private set; }
+        public virtual FootballClub? CurrentClub { get; set; }
 
         public virtual List<Transfer> TransferHistory { get; } = new List<Transfer>();
 

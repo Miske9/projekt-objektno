@@ -76,8 +76,8 @@ namespace tutorial_wpf
             if (playersViewSource.View.CurrentItem != null)
             {
                 Player selectedPlayer = (Player)playersViewSource.View.CurrentItem;
-                var indInDb = _context.Players.First(p => p.Name == selectedPlayer.Name);
-                _context.Players.Remove(indInDb);
+                _context.Players.Remove(selectedPlayer);
+                _context.Database.ExecuteSqlRaw("PRAGMA foreign_keys = OFF;");
                 _context.SaveChanges();
                 playersViewSource.Source = _context.Players.Local.ToList();
             }
