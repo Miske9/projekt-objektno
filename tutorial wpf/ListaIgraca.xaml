@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="tutorial_wpf.lista_igraca"
+    x:Class="tutorial_wpf.ListaIgraca"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:tutorial_wpf"
@@ -26,10 +26,14 @@
                             DisplayMemberBinding="{Binding Name}"
                             Header="Ime" />
                         <GridViewColumn
+    Width="100"
+    DisplayMemberBinding="{Binding Age}"
+    Header="Godine"></GridViewColumn>
+                        <GridViewColumn
                             Width="100"
                             DisplayMemberBinding="{Binding Category}"
                             Header="Kategorija" />
-                        <GridViewColumn Header="Klub">
+                        <!--<GridViewColumn Header="Klub">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding CurrentClub.Name, FallbackValue=Nije u klubu}" />
@@ -39,7 +43,7 @@
                                     </DataTemplate.Triggers>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        </GridViewColumn>-->
                         <GridViewColumn
                             Width="100"
                             DisplayMemberBinding="{Binding Position}"

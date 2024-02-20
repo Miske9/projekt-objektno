@@ -9,5 +9,11 @@
     Width="800"
     Height="450"
     Source="MainPage.xaml" 
+    Loaded="Window_Load"
     >
+    <Window.Resources>
+        <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}"/>
+        <CollectionViewSource x:Key="matchesViewSource" Source="{Binding Matches}"/>
+        <CollectionViewSource x:Key="footballClubsViewSource" Source="{Binding FootballClubs}"/>
+    </Window.Resources>
 </NavigationWindow>

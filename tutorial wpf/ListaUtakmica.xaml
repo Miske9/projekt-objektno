@@ -1,25 +1,26 @@
 ﻿<Page
-    x:Class="tutorial_wpf.Utakmice"
+    x:Class="tutorial_wpf.ListaUtakmica"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:tutorial_wpf"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Utakmice"
-    d:DesignHeight="450"
-    d:DesignWidth="780"
-    mc:Ignorable="d">
-
-    <Grid>
+    Height="450"
+    Width="780"
+    Loaded="Page_Loaded">
+    <Page.Resources>
+        <CollectionViewSource x:Key="matchesViewSource" Source="{Binding Matches}" />
+    </Page.Resources>
+    <Grid >
         <ListBox
             Background="AntiqueWhite"
-            ItemsSource="{Binding Matches}"
+            ItemsSource="{Binding Source={StaticResource matchesViewSource}}"
             MouseDoubleClick="OnMatchSelect"
             TextBlock.Foreground="Black">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel
                         Width="780"
+                        Height="30"
                         Orientation="Horizontal"
                         TextBlock.FontSize="10">
                         <TextBlock FontWeight="Bold" Text="{Binding Opponent}" />

@@ -1,19 +1,17 @@
-﻿using System;
-
-namespace tutorial_wpf
+﻿namespace tutorial_wpf
 {
     public class Match
     {
         public int MatchId { get; set; }
-        public string DomaciStrijelac { get; set; }
-        public string GostStrijelac { get; set; }
-        public string Opponent { get; }
-        public string Klub { get; }
-        public string Location { get; }
+        public string? DomaciStrijelac { get; set; }
+        public string? GostStrijelac { get; set; }
+        public string Opponent { get; set; }
+        public string Klub { get; set; }
+        public string Location { get; set; }
         public int HomeGoals { get; private set; }
         public int AwayGoals { get; private set; }
         public string Result { get; set; }
-        public string TeamType { get; }
+        public string TeamType { get; set; }
 
         public Match() { }
         public Match(string opponent, string klub, string location, string teamType)
@@ -25,17 +23,21 @@ namespace tutorial_wpf
             TeamType = teamType;
         }
 
-        public void RecordResult(int homeGoals, int awayGoals, string domaciStrijelac, string gostStrijelac)
+        public void RecordResult(int homeGoals, int awayGoals, string? domaciStrijelac, string? gostStrijelac)
         {
+            Result = $"{homeGoals}:{awayGoals}";
             HomeGoals = homeGoals;
             AwayGoals = awayGoals;
-            DomaciStrijelac = domaciStrijelac;
-            GostStrijelac = gostStrijelac;
-        }
+            if(domaciStrijelac != null)
+            {
 
-        public override string ToString()
-        {
-            return $"{Opponent} {Klub}- {Location} {TeamType} ({HomeGoals} : {AwayGoals}) ";
+            DomaciStrijelac = domaciStrijelac;
+            }
+            if(gostStrijelac != null)
+            {
+
+            GostStrijelac = gostStrijelac;
+            }
         }
     }
 }

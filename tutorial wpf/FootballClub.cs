@@ -10,18 +10,29 @@ namespace tutorial_wpf
     {
         public int FootballClubId { get; set; }
         public string Name { get; }
-        public string DomaciStrijelac { get; set; }
-        public string GostStrijelac { get; set; }
+        public int Position { get; set; }
+        public int PlayedGames { get; set; }
+        public int Wins { get; set; }
+        public int Draws { get; set; }
+        public int Losses { get; set; }
+        public int Points { get; set; }
+        public string? DomaciStrijelac { get; set; }
+        public string? GostStrijelac { get; set; }
         public virtual List<Player> Players { get; } = new List<Player>();
         public virtual List<Match> Matches { get; } = new List<Match>();
-        public decimal Finances { get; private set; }
+        public int Finances { get; private set; }
         public virtual List<Transfer> TransferHistory { get; } = new List<Transfer>();
 
         public FootballClub() { }
-        public FootballClub(string name, decimal initialFinances)
+        public FootballClub(string name, int initialFinances, int position, int wins, int draws, int loses)
         {
             Name = name;
             Finances = initialFinances;
+            Position = position;
+            Wins = wins;
+            Draws = draws;
+            Losses = loses;
+            Points = wins * 3 + draws;
         }
 
         public void AddPlayer(Player player)

@@ -1,9 +1,11 @@
-﻿namespace tutorial_wpf
+﻿using System.Numerics;
+
+namespace tutorial_wpf
 {
     public class Player
     {
         public Player() { }
-        public Player(string name, int age, string category, string position, decimal marketValue, int goals, int assists)
+        public Player(string name, int age, string category, string position, int marketValue, int goals, int assists)
         {
             Name = name;
             Age = age;
@@ -15,13 +17,13 @@
         }
 
         public int PlayerId { get; set; }
-        public string Name { get; }
-        public int Age { get; }
-        public string Position { get; }
-        public string Category { get; set; }
+        public string Name { get;set; }
+        public int Age { get; set;}
+        public string Position { get; set; }
+        public string? Category { get; set; }
         public int GoalsScored { get; private set; }
         public int Assists { get; private set; }
-        public decimal MarketValue { get; private set; }
+        public int MarketValue { get; private set; }
         public virtual FootballClub? CurrentClub { get; private set; }
 
         public virtual List<Transfer> TransferHistory { get; } = new List<Transfer>();
