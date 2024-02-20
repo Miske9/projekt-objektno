@@ -17,7 +17,6 @@ namespace tutorial_wpf
         List<Player> playersTemp;
         Player newPlayer;
         //imamo samo jedan klub
-        FootballClub club = new FootballClub("Smoljanci Sloboda", 1000, 1, 1, 2, 3);
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _context.Database.EnsureCreated();
@@ -42,8 +41,8 @@ namespace tutorial_wpf
         public void TransferPlayerToClub(Player player)
         {
             Player transferPlayer = playersTemp.First(p => p.Name == newPlayer.Name);
-            transferPlayer.TransferToClub(club, 100);
-            club.AddPlayer(player);
+            transferPlayer.TransferToClub(_context.FootballClubs.First(), 100);
+            _context.FootballClubs.First().AddPlayer(player);
         }
         private void AddPlayer_Click(object sender, RoutedEventArgs e)
         {

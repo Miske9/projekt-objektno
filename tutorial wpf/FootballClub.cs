@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tutorial_wpf
+﻿namespace tutorial_wpf
 {
     public class FootballClub
     {
         public int FootballClubId { get; set; }
-        public string Name { get; }
+        public string Name { get; set; }
         public int Position { get; set; }
         public int PlayedGames { get; set; }
         public int Wins { get; set; }
         public int Draws { get; set; }
         public int Losses { get; set; }
+
+        public int Games { get; set; }
         public int Points { get; set; }
         public string? DomaciStrijelac { get; set; }
         public string? GostStrijelac { get; set; }
@@ -32,6 +28,7 @@ namespace tutorial_wpf
             Wins = wins;
             Draws = draws;
             Losses = loses;
+            Games = loses + wins + draws;
             Points = wins * 3 + draws;
         }
 

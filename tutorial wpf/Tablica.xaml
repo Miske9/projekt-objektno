@@ -25,7 +25,7 @@
             <DataGrid.Columns> 
                 <DataGridTextColumn Binding="{Binding Position}" Header="Pozicija" />
                 <DataGridTextColumn Binding="{Binding Name}" Header="Tim" />
-                <DataGridTextColumn Binding="{Binding PlayedGames}" Header="Odigrane utakmice" />
+                <DataGridTextColumn Binding="{Binding Games}" Header="Odigrane utakmice" />
                 <DataGridTextColumn Binding="{Binding Wins}" Header="Pobjede" />
                 <DataGridTextColumn Binding="{Binding Draws}" Header="Neriješeno" />
                 <DataGridTextColumn Binding="{Binding Losses}" Header="Porazi" />
