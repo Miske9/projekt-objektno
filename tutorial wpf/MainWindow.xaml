@@ -8,13 +8,12 @@
     Title="Nogometni klub Smoljanci Sloboda"
     Width="800"
     Height="500"
-    Source="MainPage.xaml" 
-    Loaded="Window_Load"
     Icon="ikona.ico"
-    >
+    Loaded="Window_Load"
+    Source="MainPage.xaml">
     <Window.Resources>
-        <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}"/>
-        <CollectionViewSource x:Key="matchesViewSource" Source="{Binding Matches}"/>
-        <CollectionViewSource x:Key="footballClubsViewSource" Source="{Binding FootballClubs}"/>
+        <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
+        <CollectionViewSource x:Key="matchesViewSource" Source="{Binding Matches}" />
+        <CollectionViewSource x:Key="footballClubsViewSource" Source="{Binding FootballClubs}" />
     </Window.Resources>
 </NavigationWindow>
