@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 namespace tutorial_wpf
 {
     public class FootballDbContext : DbContext
@@ -18,6 +18,7 @@ namespace tutorial_wpf
             .HasMany(fc => fc.Matches)
             .WithOne(m => m.Klub)
             .HasForeignKey(m => m.MatchId);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,4 +1,6 @@
-﻿namespace tutorial_wpf
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace tutorial_wpf
 {
     public class FootballClub
     {
@@ -12,8 +14,10 @@
 
         public int Games { get; set; }
         public int Points { get; set; }
-        public string? DomaciStrijelac { get; set; }
-        public string? GostStrijelac { get; set; }
+        [NotMapped]
+        public virtual Player? DomaciStrijelac { get; set; }
+        [NotMapped]
+        public virtual Player? GostStrijelac { get; set; }
         public virtual List<Player> Players { get; } = new List<Player>();
         public virtual List<Match> Matches { get; } = new List<Match>();
         public int Finances { get; private set; }
@@ -66,7 +70,7 @@
             Console.WriteLine($"Match {match.Opponent} ({match.TeamType}) ended with the result {match.Result}.");
         }
 
-        public void Strijelci(Match match, string domaciStrijelac, string gostStrijelac)
+        public void Strijelci(Match match, Player domaciStrijelac, Player gostStrijelac)
         {
             DomaciStrijelac = domaciStrijelac;
             GostStrijelac = gostStrijelac;

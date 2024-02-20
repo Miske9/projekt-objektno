@@ -5,8 +5,8 @@
 
         FootballDbContext _context = new FootballDbContext();
         public int MatchId { get; set; }
-        public string? DomaciStrijelac { get; set; }
-        public string? GostStrijelac { get; set; }
+        public virtual Player? DomaciStrijelac { get; set; }
+        public virtual Player? GostStrijelac { get; set; }
         public virtual FootballClub Opponent { get; set; }
         public virtual FootballClub Klub { get; set; }
         public string Location { get; set; }
@@ -25,7 +25,7 @@
             TeamType = teamType;
         }
 
-        public void RecordResult(int homeGoals, int awayGoals, string? domaciStrijelac, string? gostStrijelac)
+        public void RecordResult(int homeGoals, int awayGoals, Player? domaciStrijelac, Player? gostStrijelac)
         {
             Result = $"{homeGoals}:{awayGoals}";
             HomeGoals = homeGoals;
@@ -34,6 +34,7 @@
             {
 
             DomaciStrijelac = domaciStrijelac;
+            domaciStrijelac.GoalsScored += homeGoals;
             }
             if(gostStrijelac != null)
             {

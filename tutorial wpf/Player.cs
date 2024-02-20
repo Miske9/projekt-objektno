@@ -22,8 +22,8 @@ namespace tutorial_wpf
         public int Age { get; set;}
         public string Position { get; set; }
         public string? Category { get; set; }
-        public int GoalsScored { get; private set; }
-        public int Assists { get; private set; }
+        public int GoalsScored { get; set; }
+        public int Assists { get; set; }
         public int MarketValue { get; private set; }
         public virtual FootballClub? CurrentClub { get; private set; }
 
