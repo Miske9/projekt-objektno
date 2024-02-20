@@ -30,84 +30,90 @@
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Domaći: " />
-        <Button x:Name="KlubButton" Content="{Binding Klub.Name}" Tag="{Binding Klub}" 
-                Grid.Row="0"
-                Grid.Column="1"
-                Margin="7,0,-7,0"
-                FontSize="20"
-                Click="OnSelectClub"/>
+        <Button
+            x:Name="KlubButton"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            Click="OnSelectClub"
+            Content="{Binding Opponent.Name}"
+            FontSize="15"
+            Tag="{Binding Opponent}" />
         <TextBlock
             Grid.Row="1"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Gosti:" />
-        <Button x:Name="KlubButton2" Content="{Binding Opponent.Name}" Tag="{Binding Opponent}" 
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="7,0,-7,0"
-                FontSize="20"
-                Click="OnSelectOpponent"/>
+        <Button
+            x:Name="KlubButton2"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="7,0,-7,0"
+            Click="OnSelectOpponent"
+            Content="{Binding Klub.Name}"
+            FontSize="15"
+            Tag="{Binding Klub}" />
 
         <TextBlock
             Grid.Row="2"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Lokacija:" />
         <TextBlock
             Grid.Row="2"
             Grid.Column="1"
             Margin="7,0,-7,0"
-            FontSize="20"
+            FontSize="15"
             Text="{Binding Location}" />
 
         <TextBlock
             Grid.Row="3"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Rezultat:" />
         <TextBlock
             Grid.Row="3"
             Grid.Column="1"
             Margin="7,0,-7,0"
-            FontSize="20"
+            FontSize="15"
             Text="{Binding Result}" />
 
         <TextBlock
             Grid.Row="4"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Natjecanje: " />
         <TextBlock
             Grid.Row="4"
             Grid.Column="1"
             Margin="7,0,-7,0"
-            FontSize="20"
+            FontSize="15"
             Text="{Binding TeamType}" />
 
         <TextBlock
             Grid.Row="5"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Domaći strijelac:" />
         <TextBlock
             Grid.Row="5"
             Grid.Column="1"
             Margin="7,0,-7,0"
-            FontSize="20"
+            FontSize="15"
             Text="{Binding DomaciStrijelac}" />
 
         <TextBlock
             Grid.Row="6"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="15"
             Text="Gostujući strijelac:" />
         <TextBlock
             Grid.Row="6"
             Grid.Column="1"
             Margin="7,0,-7,0"
-            FontSize="20"
+            FontSize="15"
             Text="{Binding GostStrijelac}" />
     </Grid>
 </Page>
