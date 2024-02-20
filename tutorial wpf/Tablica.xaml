@@ -20,6 +20,7 @@
             Background="AntiqueWhite"
             IsReadOnly="True"
             TextBlock.Foreground="Black"
+            MouseDoubleClick="OnClubSelect"
             ItemsSource="{Binding Source={StaticResource footballClubsViewSource}}"
             >
             <DataGrid.Columns> 

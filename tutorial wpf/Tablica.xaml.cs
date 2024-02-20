@@ -23,5 +23,16 @@ namespace tutorial_wpf
             _context.FootballClubs.Load();
             footballClubsViewSource.Source = _context.FootballClubs.Local.ToList();
         }
+
+        public void OnClubSelect(object sender, EventArgs e)
+        {
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem != null)
+            {
+                FootballClub selectedMatch = scoreboardDataGrid.SelectedItem as FootballClub;
+                DetaljiOKlubu detalji2Page = new DetaljiOKlubu(selectedMatch);
+
+                this.NavigationService.Navigate(detalji2Page);
+            }
+        }
     }
 }
