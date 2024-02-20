@@ -25,7 +25,7 @@ namespace tutorial_wpf
 
         public AboutViewModel()
         {
-            Location = "Hrvatska";
+            Location = "Hrvatska, Istra";
             Address = "Svetvinčenat 988";
             Phone = "+38597876765";
             Fax = "051234";

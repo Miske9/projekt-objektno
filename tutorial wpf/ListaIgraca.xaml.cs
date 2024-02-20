@@ -44,7 +44,7 @@ namespace tutorial_wpf
             }
             string name = txtName.Text;
             age = int.Parse(txtAge.Text);
-            string category = age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran"; // Determine category based on age
+            string category = age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran";
             string position = txtPosition.Text;
             marketValue = int.Parse(txtMarketValue.Text);
             newPlayer = new Player(name, age, category, position, marketValue, 0, 0);

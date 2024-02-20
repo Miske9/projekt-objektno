@@ -33,11 +33,6 @@ namespace tutorial_wpf
             _context.FootballClubs.Load();
             _context.Matches.Load();
 
-            //======================================================
-            // ODKOMENTIRAJ DO KRAJA BLOKA ZA DODAVALJE PODATAKA U DB
-            //======================================================
-
-            //AKO SE OVO RADI TREBA SE IZBRISATI football.db FILE I POKRENI OVO SAMO JEDANPUT!!!
             /*
             _context.FootballClubs.Add(new FootballClub("Smoljanci Sloboda", 100000, 1, 8, 1, 0));
             _context.FootballClubs.Add(new FootballClub("Real Madrid", 300, 2, 7, 1, 1));
