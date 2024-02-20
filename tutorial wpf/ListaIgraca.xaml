@@ -15,7 +15,7 @@
             <ListView
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
-                Background="MediumPurple"
+                Background="AntiqueWhite"
                 ItemsSource="{Binding Source={StaticResource playersViewSource}}"
                 MouseDoubleClick="OnPlayerSelect"
                 TextBlock.Foreground="Black">
@@ -26,9 +26,9 @@
                             DisplayMemberBinding="{Binding Name}"
                             Header="Ime" />
                         <GridViewColumn
-    Width="100"
-    DisplayMemberBinding="{Binding Age}"
-    Header="Godine"></GridViewColumn>
+                            Width="100"
+                            DisplayMemberBinding="{Binding Age}"
+                            Header="Godine" />
                         <GridViewColumn
                             Width="100"
                             DisplayMemberBinding="{Binding Category}"
