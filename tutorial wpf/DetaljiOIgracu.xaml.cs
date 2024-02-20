@@ -2,12 +2,12 @@
 
 namespace tutorial_wpf
 {
-    public partial class DetaljiOUtakmici : Page
+    public partial class DetaljiOIgracu : Page
     {
-        public DetaljiOUtakmici(Match match)
+        public DetaljiOIgracu(Player player)
         {
             InitializeComponent();
-            DataContext = match;
+            DataContext = player;
         }
     }
 }
