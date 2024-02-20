@@ -21,21 +21,8 @@ namespace tutorial_wpf
         {
             _context.Database.EnsureCreated();
             _context.Players.Load();
-            //DODAVANJE NOVOG IGRACA U DATABAZU
-            //int age = 12;
-            //newPlayer = new Player("TIGUAL", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //newPlayer = new Player("Manye", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //newPlayer = new Player("asdasda", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //newPlayer = new Player("Matija", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //newPlayer = new Player("David", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //newPlayer = new Player("Nez ki js", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
-            //_context.Players.Add(newPlayer);
-            //playersTemp = _context.Players.Local.ToList();
-            //AddPlayer(newPlayer);
-            //_context.FootballClubs.Add(club);
-            //TransferPlayerToClub(newPlayer);
-            //_context.SaveChanges();
-            playersViewSource.Source = _context.Players.Local.ToList();
+
+            playersViewSource.Source = _context.FootballClubs.First().Players.ToList();
             playersViewSource.View.Refresh();
         }
         public void TransferPlayerToClub(Player player)
@@ -85,22 +72,16 @@ namespace tutorial_wpf
         {
             if (playersViewSource.View.CurrentItem != null)
             {
-                //Player selectedPlayer = (Player)playersViewSource.View.CurrentItem;
-                //var indInDb = _context.Players.First(p => p.PlayerId == selectedPlayer.PlayerId);
-                //MessageBox.Show($"Selected player: {selectedPlayer.Name}");
-                //_context.Players.Remove(indInDb);
-                //_context.Database.ExecuteSqlRaw("PRAGMA foreign_keys = OFF;");
-                //_context.SaveChanges();
-                //playersViewSource.Source = _context.Players.Local.ToList();
                 var button = sender as Button;
                 if (button != null)
                 {
                     var player = button.DataContext as Player;
                     if (player != null)
                     {
-                        _context.Players.Remove(player);
+                        var tempClub = player.CurrentClub;
+                        player.CurrentClub = null;
                         _context.SaveChanges();
-                        playersViewSource.Source = _context.Players.Local.ToList();
+                        playersViewSource.Source = tempClub.Players.ToList();
                     }
                 }
             }
