@@ -2,6 +2,8 @@
 {
     public class Match
     {
+
+        FootballDbContext _context = new FootballDbContext();
         public int MatchId { get; set; }
         public string? DomaciStrijelac { get; set; }
         public string? GostStrijelac { get; set; }
