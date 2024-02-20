@@ -23,9 +23,9 @@
                         Height="30"
                         Orientation="Horizontal"
                         TextBlock.FontSize="10">
-                        <TextBlock FontWeight="Bold" Text="{Binding Opponent}" />
+                        <TextBlock FontWeight="Bold" Text="{Binding Opponent.Name}" />
                         <TextBlock Text=" vs " />
-                        <TextBlock FontWeight="Bold" Text="{Binding Klub}" />
+                        <TextBlock FontWeight="Bold" Text="{Binding Klub.Name}" />
                         <TextBlock Text=" - " />
                         <TextBlock Text="{Binding Location}" />
                         <TextBlock Text=" (" />

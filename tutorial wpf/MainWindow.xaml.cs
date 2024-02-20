@@ -37,9 +37,14 @@ namespace tutorial_wpf
             //_context.FootballClubs.Add(new FootballClub("Lecce", 90, 7, 3, 3, 3));
             //_context.FootballClubs.Add(new FootballClub("Monza", 120, 8, 2, 2, 5));
             //_context.FootballClubs.Add(new FootballClub("Genoa", 140, 9, 1, 3, 5));
-
             //_context.SaveChanges();
+
             _context.Matches.Load();
+
+            //Match match = new Match(_context.FootballClubs.First(), _context.FootballClubs.Local.ToList()[1], "Stadion ", "Champions League");
+            //match.RecordResult(1, 2, "Rodrygo", "Mirko, Mero");
+            //_context.Matches.Add(match);
+            //_context.SaveChanges();
 
             playersViewSource.Source = _context.Players.Local.ToObservableCollection();
             matchesViewSource.Source = _context.Matches.Local.ToObservableCollection();

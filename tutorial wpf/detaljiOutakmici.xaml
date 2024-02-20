@@ -32,24 +32,23 @@
             Grid.Column="0"
             FontSize="20"
             Text="Domaći: " />
-        <TextBlock
-            Grid.Row="0"
-            Grid.Column="1"
-            Margin="7,0,-7,0"
-            FontSize="20"
-            Text="{Binding Opponent}" />
-
+        <Button x:Name="KlubButton" Content="{Binding Klub.Name}" Tag="{Binding Klub}" 
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="7,0,-7,0"
+                FontSize="20"
+                Click="OnSelectClub"/>
         <TextBlock
             Grid.Row="1"
             Grid.Column="0"
             FontSize="20"
             Text="Gosti:" />
-        <TextBlock
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="7,0,-7,0"
-            FontSize="20"
-            Text="{Binding Klub}" />
+        <Button x:Name="KlubButton2" Content="{Binding Opponent.Name}" Tag="{Binding Opponent}" 
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="7,0,-7,0"
+                FontSize="20"
+                Click="OnSelectOpponent"/>
 
         <TextBlock
             Grid.Row="2"

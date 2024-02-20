@@ -7,8 +7,8 @@
         public int MatchId { get; set; }
         public string? DomaciStrijelac { get; set; }
         public string? GostStrijelac { get; set; }
-        public string Opponent { get; set; }
-        public string Klub { get; set; }
+        public virtual FootballClub Opponent { get; set; }
+        public virtual FootballClub Klub { get; set; }
         public string Location { get; set; }
         public int HomeGoals { get; private set; }
         public int AwayGoals { get; private set; }
@@ -16,7 +16,7 @@
         public string TeamType { get; set; }
 
         public Match() { }
-        public Match(string opponent, string klub, string location, string teamType)
+        public Match(FootballClub opponent, FootballClub klub, string location, string teamType)
         {
             Opponent = opponent;
             Klub = klub;

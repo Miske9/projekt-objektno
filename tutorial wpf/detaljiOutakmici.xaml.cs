@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace tutorial_wpf
 {
@@ -8,6 +9,21 @@ namespace tutorial_wpf
         {
             InitializeComponent();
             DataContext = match;
+        }
+
+        public void OnSelectClub(object sender, RoutedEventArgs e)
+        {
+            FootballClub selectedMatch = KlubButton.Tag as FootballClub;
+            DetaljiOKlubu detalji2Page = new DetaljiOKlubu(selectedMatch);
+
+            this.NavigationService.Navigate(detalji2Page);
+        }
+        public void OnSelectOpponent(object sender, RoutedEventArgs e)
+        {
+            FootballClub selectedMatch = KlubButton2.Tag as FootballClub;
+            DetaljiOKlubu detalji2Page = new DetaljiOKlubu(selectedMatch);
+
+            this.NavigationService.Navigate(detalji2Page);
         }
     }
 }

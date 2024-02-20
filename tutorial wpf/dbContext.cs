@@ -13,6 +13,11 @@ namespace tutorial_wpf
               .HasMany(p => p.TransferHistory)
               .WithOne()
               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<FootballClub>()
+            .HasMany(fc => fc.Matches)
+            .WithOne(m => m.Klub)
+            .HasForeignKey(m => m.MatchId);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
