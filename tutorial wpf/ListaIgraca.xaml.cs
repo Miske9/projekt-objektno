@@ -75,11 +75,24 @@ namespace tutorial_wpf
         {
             if (playersViewSource.View.CurrentItem != null)
             {
-                Player selectedPlayer = (Player)playersViewSource.View.CurrentItem;
-                _context.Players.Remove(selectedPlayer);
-                _context.Database.ExecuteSqlRaw("PRAGMA foreign_keys = OFF;");
-                _context.SaveChanges();
-                playersViewSource.Source = _context.Players.Local.ToList();
+                //Player selectedPlayer = (Player)playersViewSource.View.CurrentItem;
+                //var indInDb = _context.Players.First(p => p.PlayerId == selectedPlayer.PlayerId);
+                //MessageBox.Show($"Selected player: {selectedPlayer.Name}");
+                //_context.Players.Remove(indInDb);
+                //_context.Database.ExecuteSqlRaw("PRAGMA foreign_keys = OFF;");
+                //_context.SaveChanges();
+                //playersViewSource.Source = _context.Players.Local.ToList();
+                var button = sender as Button;
+                if (button != null)
+                {
+                    var player = button.DataContext as Player;
+                    if (player != null)
+                    {
+                        _context.Players.Remove(player);
+                        _context.SaveChanges();
+                        playersViewSource.Source = _context.Players.Local.ToList();
+                    }
+                }
             }
         }
         public void OnPlayerSelect(object sender, EventArgs e)

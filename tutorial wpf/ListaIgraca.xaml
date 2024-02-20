@@ -81,7 +81,7 @@
                         <GridViewColumn Width="100" Header="">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Remove" Click="RemovePlayer_Click"/>
+                                    <Button Content="Remove" Click="RemovePlayer_Click" CommandParameter="{Binding}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
