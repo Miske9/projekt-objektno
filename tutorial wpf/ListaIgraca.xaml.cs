@@ -28,8 +28,13 @@ namespace tutorial_wpf
 
             //DODAVANJE NOVOG IGRACA U DATABAZU
 
-            //int age = 2;
+            //int age = 12;
             //newPlayer = new Player("TIGUAL", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
+            //newPlayer = new Player("Manye", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
+            //newPlayer = new Player("asdasda", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
+            //newPlayer = new Player("Matija", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
+            //newPlayer = new Player("David", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
+            //newPlayer = new Player("Nez ki js", age, age <= 11 ? "Škola Nogometa" : age < 16 ? "Pionir" : age <= 18 ? "Junior" : age <= 65 ? "Senior" : "Veteran", "napadac", 39, 3, 3);
             //_context.Players.Add(newPlayer);
             //playersTemp = _context.Players.Local.ToList();
             //AddPlayer(newPlayer);
