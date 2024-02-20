@@ -24,6 +24,22 @@ namespace tutorial_wpf
             _context.Matches.Load();
             //Match match = new Match("Real Madrid", "Smoljanci Sloboda", "Stadion ", "Champions League");
             //match.RecordResult(1, 2, "Rodrygo", "Mirko, Mero");
+            //Match match = new Match("Smoljanci Sloboda", "BVB", "Stadion Suhača", "Champions League");
+            //match.RecordResult(1, 0, "Špruc", "/");
+            //Match match = new Match("PSG", "Smoljanci Sloboda", "Stadion Park Prinčeva", "Champions League");
+            //match.RecordResult(1, 1, "Mbappe", "Kale");
+            //Match match = new Match("Smoljanci Sloboda", "Milan", "Stadion Suhača", "Champions League");
+            //match.RecordResult(2, 1, "Nino, Špruc", "Leao");
+            //Match match = new Match("Inter", "Smoljanci Sloboda", "Stadion San Siro", "Champions League");
+            //match.RecordResult(0, 1, "/", "Kale");
+            //Match match = new Match("Smoljanci Sloboda", "Lecce", "Stadion Suhača", "Champions League");
+            //match.RecordResult(2, 0, "Dino, Mero", "/");
+            //Match match = new Match("Smoljanci Sloboda", "Genoa", "Stadion Suhača", "Champions League");
+            //match.RecordResult(3, 1, "Špruc, Nino, Mero", "Castrovilli");
+            //Match match = new Match("Smoljanci Sloboda", "Monza", "Stadion Suhača", "Champions League");
+            //match.RecordResult(2, 0, "Mirko, Dino", "/");
+            //Match match = new Match("Smoljanci Sloboda", "Coventry", "Stadion Suhača", "Champions League");
+            //match.RecordResult(1, 0, "Špruc", "/");
             //_context.Matches.Add(match);
             //_context.SaveChanges();
 

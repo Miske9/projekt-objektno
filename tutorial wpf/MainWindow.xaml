@@ -10,6 +10,7 @@
     Height="450"
     Source="MainPage.xaml" 
     Loaded="Window_Load"
+    Icon="ikona.ico"
     >
     <Window.Resources>
         <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}"/>

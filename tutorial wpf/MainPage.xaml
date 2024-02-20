@@ -10,25 +10,25 @@
     d:DesignWidth="780"
     mc:Ignorable="d">
     <Grid Background="Purple">
-
-        <Image Margin="329,-70,0,-70" Source="nkss.jpeg" />
+        <Image HorizontalAlignment="Right" Source="/nkss.jpeg" />
         <StackPanel>
             <Frame x:Name="MainFrame" />
+            <Label Height="5px" />
             <Label
                 x:Name="MainLabel"
-                Width="287"
-                Height="25"
-                HorizontalAlignment="Center"
-                Background="#FFFFE600"
+                Width="339"
+                Height="31"
+                Margin="383,0,0,0"
+                HorizontalAlignment="Right"
                 Content="&#x9;Nogometni klub Smoljanci Sloboda"
+                TextBlock.FontWeight="Bold"
                 TextBlock.TextAlignment="Center" />
-            <Label Height="5px" />
             <Button
                 x:Name="IgraciButton"
                 Width="298"
                 Height="70"
                 HorizontalAlignment="Left"
-                Background="#FFFFE600"
+                Background="AntiqueWhite"
                 Click="IgraciButton_Click"
                 Cursor="Hand"
                 TextBlock.FontSize="20"
@@ -41,7 +41,7 @@
                 Width="298"
                 Height="70"
                 HorizontalAlignment="Left"
-                Background="#FFFFE600"
+                Background="AntiqueWhite"
                 Click="UtakmiceButton_Click"
                 Cursor="Hand"
                 TextBlock.FontSize="20"
@@ -54,7 +54,7 @@
                 Width="298"
                 Height="70"
                 HorizontalAlignment="Left"
-                Background="#FFFFE600"
+                Background="AntiqueWhite"
                 Click="KategorijeButton_Click"
                 Cursor="Hand"
                 TextBlock.FontSize="20"
@@ -67,7 +67,7 @@
                 Width="298"
                 Height="70"
                 HorizontalAlignment="Left"
-                Background="#FFFFE600"
+                Background="AntiqueWhite"
                 Click="AboutButton_Click"
                 Cursor="Hand"
                 TextBlock.FontSize="20"
