@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Numerics;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -36,6 +37,8 @@ namespace tutorial_wpf
             // ODKOMENTIRAJ DO KRAJA BLOKA ZA DODAVALJE PODATAKA U DB
             //======================================================
 
+            //AKO SE OVO RADI TREBA SE IZBRISATI football.db FILE!!!
+            
             //_context.FootballClubs.Add(new FootballClub("Smoljanci Sloboda", 100000, 1, 8, 1, 0));
             //_context.FootballClubs.Add(new FootballClub("Real Madrid", 300, 2, 7, 1, 1));
             //_context.FootballClubs.Add(new FootballClub("Milan", 200, 3, 6, 2, 1));
@@ -59,9 +62,35 @@ namespace tutorial_wpf
             //TransferPlayerToClub(new Player("Toni", 18, "junior", "napadac", 32, 0, 0), _context.FootballClubs.First(), 200);
 
 
-            //Match match = new Match(_context.FootballClubs.First(), _context.FootballClubs.Local.ToList()[1], "Stadion ", "Champions League");
-            //match.RecordResult(1, 1, _context.Players.Local.ToList()[0], _context.Players.Local.ToList()[1]);
-            //_context.Matches.Add(match);
+            //Match match1 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[2], "Stadion Suhača","Champions League");
+            //match1.RecordResult(1, 1, _context.Players.Local.ToList()[3],
+            //_context.Players.Local.ToList()[1]);
+            //Match match2 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[3], "Stadion Suhača", "Champions League");
+            //match2.RecordResult(1, 0, _context.Players.Local.ToList()[0], null);
+            //Match match3 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[4], "Stadion Suhača", "Champions League");
+            //match3.RecordResult(1, 0, _context.Players.Local.ToList()[2], null);
+            //Match match4 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[6], "Stadion Suhača", "Champions League");
+            //match4.RecordResult(1, 0, _context.Players.Local.ToList()[4], null);
+            //Match match5 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[7], "Stadion Suhača", "Champions League");
+            //match5.RecordResult(1, 0, _context.Players.Local.ToList()[1], null);
+            //Match match6 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[8], "Stadion Suhača", "Champions League");
+            //match6.RecordResult(1, 0, _context.Players.Local.ToList()[0], null);
+            //Match match8 = new Match(_context.FootballClubs.First(),
+            //_context.FootballClubs.Local.ToList()[5], "Stadion Suhača", "Champions League");
+            //match8.RecordResult(1, 0, _context.Players.Local.ToList()[0], null);
+            //_context.Matches.Add(match1);
+            //_context.Matches.Add(match2);
+            //_context.Matches.Add(match3);
+            //_context.Matches.Add(match4);
+            //_context.Matches.Add(match5);
+            //_context.Matches.Add(match6);
+            //_context.Matches.Add(match8);
             //_context.SaveChanges();
 
             //======================================================
