@@ -11,7 +11,7 @@
         <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
     </Page.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid>
+        <Grid Background="AntiqueWhite">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" MinHeight="200"/>
                 <RowDefinition Height="150" />
@@ -94,7 +94,7 @@
 						   />
                     <Label Content="Age" Width="50" Height="28" Margin="10,0,0,0"/>
                     <Label Content="Position" Width="75" Height="28" Margin="10,0,0,0"/>
-                    <Label Content="Market Value" Width="50" Height="28" Margin="10,0,0,0"/>
+                    <Label Content="Market Value" Width="100" Height="28" Margin="10,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox x:Name="txtName" Width="100" Height="20" Margin="5"/>

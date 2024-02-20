@@ -16,7 +16,6 @@ namespace tutorial_wpf
         }
         List<Player> playersTemp;
         Player newPlayer;
-        //imamo samo jedan klub
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _context.Database.EnsureCreated();
@@ -24,12 +23,6 @@ namespace tutorial_wpf
 
             playersViewSource.Source = _context.FootballClubs.First().Players.ToList();
             playersViewSource.View.Refresh();
-        }
-        public void TransferPlayerToClub(Player player)
-        {
-            Player transferPlayer = playersTemp.First(p => p.Name == newPlayer.Name);
-            transferPlayer.TransferToClub(_context.FootballClubs.First(), 100);
-            _context.FootballClubs.First().AddPlayer(player);
         }
         private void AddPlayer_Click(object sender, RoutedEventArgs e)
         {
@@ -60,13 +53,11 @@ namespace tutorial_wpf
             txtPosition.Text = "";
             txtMarketValue.Text = "";
             _context.Players.Add(newPlayer);
-            playersTemp = _context.Players.Local.ToList();
-            //_context.FootballClubs.Add(club);
-            TransferPlayerToClub(newPlayer);
+            _context.FootballClubs.First().Players.Add(newPlayer);
             _context.SaveChanges();
             addPlayerForm.Visibility = Visibility.Collapsed;
             AddPlayerButton.Visibility = Visibility.Visible;
-            playersViewSource.Source = _context.Players.Local.ToList();
+            playersViewSource.Source = _context.FootballClubs.First().Players.ToList();
         }
         private void RemovePlayer_Click(object sender, RoutedEventArgs e)
         {

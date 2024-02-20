@@ -36,7 +36,7 @@ namespace tutorial_wpf
             // ODKOMENTIRAJ DO KRAJA BLOKA ZA DODAVALJE PODATAKA U DB
             //======================================================
 
-            //_context.FootballClubs.Add(new FootballClub("Smoljanci Sloboda", 100, 1, 8, 1, 0));
+            //_context.FootballClubs.Add(new FootballClub("Smoljanci Sloboda", 100000, 1, 8, 1, 0));
             //_context.FootballClubs.Add(new FootballClub("Real Madrid", 300, 2, 7, 1, 1));
             //_context.FootballClubs.Add(new FootballClub("Milan", 200, 3, 6, 2, 1));
             //_context.FootballClubs.Add(new FootballClub("BVB", 150, 4, 6, 0, 3));
