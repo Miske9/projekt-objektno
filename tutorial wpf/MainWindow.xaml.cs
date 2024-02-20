@@ -60,7 +60,7 @@ namespace tutorial_wpf
 
 
             //Match match = new Match(_context.FootballClubs.First(), _context.FootballClubs.Local.ToList()[1], "Stadion ", "Champions League");
-            //match.RecordResult(1, 2, _context.Players.Local.ToList()[0], _context.Players.Local.ToList()[1]);
+            //match.RecordResult(1, 1, _context.Players.Local.ToList()[0], _context.Players.Local.ToList()[1]);
             //_context.Matches.Add(match);
             //_context.SaveChanges();
 

@@ -5,7 +5,7 @@
    xmlns:local="clr-namespace:tutorial_wpf"
    Title="Lista Igraca"
    Width="785"
-   Height="500"
+   Height="450"
    Loaded="Page_Loaded">
     <Page.Resources>
         <CollectionViewSource x:Key="playersViewSource" Source="{Binding Players}" />
@@ -13,8 +13,9 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Background="AntiqueWhite">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" MinHeight="200"/>
-                <RowDefinition Height="150" />
+                <RowDefinition Height="Auto" MinHeight="150"/>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <ListView
@@ -88,6 +89,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <Button Grid.Row="2" x:Name="AddPlayerButton" Width="200" Content="Add Player" Click="AddPlayer_Click" Margin="5" Height="20"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5" Width="315" x:Name="addPlayerForm" Visibility="Collapsed">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Ime" Width="100" Height="28"
@@ -104,7 +106,6 @@
                 </StackPanel>
                 <Button Content="Save" Click="SavePlayer_Click" Margin="5" Width="auto" Height="20"/>
             </StackPanel>
-            <Button Grid.Row="2" x:Name="AddPlayerButton" Width="200" Content="Add Player" Click="AddPlayer_Click" Margin="5" Height="20"/>
         </Grid>
     </ScrollViewer>
 </Page>
