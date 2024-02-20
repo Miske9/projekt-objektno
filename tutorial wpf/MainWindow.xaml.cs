@@ -37,8 +37,8 @@ namespace tutorial_wpf
             // ODKOMENTIRAJ DO KRAJA BLOKA ZA DODAVALJE PODATAKA U DB
             //======================================================
 
-            //AKO SE OVO RADI TREBA SE IZBRISATI football.db FILE!!!
-            
+            //AKO SE OVO RADI TREBA SE IZBRISATI football.db FILE I POKRENI OVO SAMO JEDANPUT!!!
+
             //_context.FootballClubs.Add(new FootballClub("Smoljanci Sloboda", 100000, 1, 8, 1, 0));
             //_context.FootballClubs.Add(new FootballClub("Real Madrid", 300, 2, 7, 1, 1));
             //_context.FootballClubs.Add(new FootballClub("Milan", 200, 3, 6, 2, 1));
@@ -63,7 +63,7 @@ namespace tutorial_wpf
 
 
             //Match match1 = new Match(_context.FootballClubs.First(),
-            //_context.FootballClubs.Local.ToList()[2], "Stadion Suhača","Champions League");
+            //_context.FootballClubs.Local.ToList()[2], "Stadion Suhača", "Champions League");
             //match1.RecordResult(1, 1, _context.Players.Local.ToList()[3],
             //_context.Players.Local.ToList()[1]);
             //Match match2 = new Match(_context.FootballClubs.First(),
