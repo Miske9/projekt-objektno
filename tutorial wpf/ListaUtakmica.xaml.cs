@@ -22,8 +22,8 @@ namespace tutorial_wpf
         {
             _context.Database.EnsureCreated();
             _context.Matches.Load();
-            //Match match = new Match("Smoljanci Sloboda", "Bilbao", "Stadion Suhača", "Champions League");
-            //match.RecordResult(0, 0, "/", "/");
+            //Match match = new Match("Real Madrid", "Smoljanci Sloboda", "Stadion ", "Champions League");
+            //match.RecordResult(1, 2, "Rodrygo", "Mirko, Mero");
             //_context.Matches.Add(match);
             //_context.SaveChanges();
 
